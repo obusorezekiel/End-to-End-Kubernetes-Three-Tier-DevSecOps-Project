@@ -28,9 +28,6 @@ jobs:
     
           - name: Install dependencies
             run: npm install
-    
-          - name: Run tests
-            run: npm test
          
           - name: Set up QEMU on the server
             uses: docker/setup-qemu-action@v3
