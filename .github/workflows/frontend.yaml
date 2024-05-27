@@ -45,5 +45,6 @@ jobs:
           - name: Build and Push
             uses: docker/build-push-action@v5
             with:
+              context: ./Application-Code/frontend
               push: true
               tags: ${{ secrets.DOCKERHUB_USERNAME }}/${{ secrets.DOCKERHUB_REPO }}:${{ github.run_id }}
