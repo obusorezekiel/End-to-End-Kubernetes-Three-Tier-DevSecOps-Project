@@ -25,7 +25,7 @@ spec:
       - name: ecr-registry-secret
       containers:
       - name: api
-        image: obusorezekiel/myapp_backend:latest
+        image: obusorezekiel/myapp_backend:9277013773
         imagePullPolicy: Always
         env:
           - name: MONGO_CONN_STR
