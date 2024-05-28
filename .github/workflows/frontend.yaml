@@ -64,12 +64,12 @@ jobs:
             uses: actions/checkout@v3
               
           - name: Set file permissions
-            run: chmod 777 Kubernetes/Frontend/deployment.yml
+            run: chmod 777 Kubernetes/Frontend/deployment.yaml
               
           - name: Update Deployment YAML
             run: |
-              sed -i "s|image:.*$|image: ${{ secrets.DOCKERHUB_USERNAME }}/${{ secrets.DOCKERHUB_REPO }}:${{ github.run_id }}|g" Kubernetes/Frontend/deployment.yml
-              cat Kubernetes/Frontend/deployment.yml
+              sed -i "s|image:.*$|image: ${{ secrets.DOCKERHUB_USERNAME }}/${{ secrets.DOCKERHUB_REPO }}:${{ github.run_id }}|g" Kubernetes/Frontend/deployment.yaml
+              cat Kubernetes/Frontend/deployment.yaml
             env:
                 github_token: ${{ secrets.GH_PAT }}    
           
@@ -77,7 +77,7 @@ jobs:
             run: |
               git config --global user.email "ci-bot@argocd.com"
               git config --global user.name "ci-bot"
-              git add Kubernetes/Frontend/deployment.yml    
+              git add Kubernetes/Frontend/deployment.yaml    
               git commit -m "Update image tag"
             env:
               github_token: ${{ secrets.GH_PAT }}
