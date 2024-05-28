@@ -55,10 +55,6 @@ jobs:
     update_k8s_deployment_file:
         runs-on: ubuntu-latest
         needs: Build_and_Push_Image
-        defaults:
-          run:
-              shell: bash
-              working-directory: ./Application-Code/frontend
         steps:
           - name: Get Image Tag
             id: tag
