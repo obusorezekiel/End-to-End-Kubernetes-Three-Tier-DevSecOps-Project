@@ -68,7 +68,7 @@ jobs:
               
           - name: Update Deployment YAML
             run: |
-              sed -i "s|image:.*$|image: ${{ secrets.DOCKERHUB_USERNAME }}/${{ secrets.DOCKERHUB_REPO_BE }}:${{ github.run_id }}|g" Kubernetes/Backendend/deployment.yaml
+              sed -i "s|image:.*$|image: ${{ secrets.DOCKERHUB_USERNAME }}/${{ secrets.DOCKERHUB_REPO_BE }}:${{ github.run_id }}|g" Kubernetes/Backend/deployment.yaml
               cat Kubernetes/Backend/deployment.yaml
             env:
                 github_token: ${{ secrets.GH_PAT }}    
