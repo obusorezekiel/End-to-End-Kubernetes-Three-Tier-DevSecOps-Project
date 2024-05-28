@@ -82,7 +82,7 @@ jobs:
             env:
               github_token: ${{ secrets.GH_PAT }}
                   
-                  #Commit
+                  #Commit change
           - name: Push changes
             uses: ad-m/github-push-action@v0.6.0
             with:
