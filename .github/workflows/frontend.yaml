@@ -58,7 +58,7 @@ jobs:
         defaults:
           run:
               shell: bash
-              working-directory: Application-Code/frontend
+              working-directory: ./Application-Code/frontend
         steps:
           - name: Get Image Tag
             id: tag
